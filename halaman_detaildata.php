@@ -9,7 +9,7 @@
     include("sambungdatabase.php");
 
     $id = $_GET['id'];
-    $query = mysqli_query($koneksi, "SELECT * FROM input_aspirasi WHERE id='$id'");
+    $query = mysqli_query($koneksi, "SELECT * FROM input_aspirasi  JOIN tbuser ON input_aspirasi.NIS = tbuser.nis JOIN `kategori` ON input_aspirasi.id_kategori = kategori.id WHERE input_aspirasi.id='$id'");
 
     $data = mysqli_fetch_assoc($query);
     ?>

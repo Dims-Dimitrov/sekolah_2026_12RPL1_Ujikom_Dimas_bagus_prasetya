@@ -54,7 +54,7 @@
         <aside class="sidebar">
             <h2>Menu</h2>
             <ul>
-                <li><a href="#">Dashboard</a></li>
+                <li><a href="halaman_pengaduan.php">halaman pengaduan</a></li>
                 <li><a href="#">Profil</a></li>
                 <li><a href="#">Pengaturan</a></li>
             </ul>
