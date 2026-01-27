@@ -17,6 +17,9 @@
             <label for="lokasi">lokasi</label>
             <input type="text" id="lokasi" name="lokasi" placeholder="Masukkan Lokasi" required><br><br>
 
+            <label for="kategori">Kategori</label>
+
+
             <label for="keterangan">Isi Pengaduan</label>
             <textarea id="keterangan" name="keterangan" placeholder="Masukkan Isi Pengaduan Anda"
                 required></textarea><br><br>

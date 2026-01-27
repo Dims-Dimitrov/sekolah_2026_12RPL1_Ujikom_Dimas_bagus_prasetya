@@ -2,17 +2,18 @@
 $host = "localhost";
 $username = "root";
 $password = "";
-$database = "2026_12rpl1_ujikom_dimas_bagus_prasetya";
+$database = "2026_ujikom_12rpl1_dimas_bagus_p";
 
 
-$conn = mysqli_connect($host, $username, $password, $database);
-
-
-if (!$conn) {
-    die("Koneksi gagal: " . mysqli_connect_error());
+$koneksi = mysqli_connect($host, $username, $password, $database);
+if (mysqli_connect_errno()) {
+    echo "Koneksi database gagal : " . mysqli_connect_error();
 }
 
+else {
+    // echo "Koneksi berhasil";
+}
 
-mysqli_set_charset($conn, "utf8");
+mysqli_set_charset($koneksi, "utf8");
 
 ?>
