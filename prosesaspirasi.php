@@ -1,20 +1,24 @@
 <?php 
 include("sambungdatabase.php");
-    
+
 if(isset($_POST["kirim"])){ 
     $nis = $_POST["NIS"];
     $lokasi = $_POST["lokasi"];
-    $kategori = $_POST["kategori"];
+    $id_kategori = $_POST["id_kategori"];
     $keterangan = $_POST["keterangan"];
 
-    $query = mysqli_query($koneksi, "INSERT INTO tbpengaduan(nis, lokasi, kategori, keterangan) VALUES ('$nis', '$lokasi', '$kategori', '$keterangan')");
+    $query = "INSERT INTO input_aspirasi (nis, lokasi, id_kategori, keterangan) 
+              VALUES ('$nis', '$lokasi', '$id_kategori', '$keterangan')";
 
     $simpan = mysqli_query($koneksi, $query);
+
     if($simpan){
-        echo "<script>alert('Data Berhasil Disimpan');
-    window.location.href = 'halaman_pengaduan.php'; </script>";
+        echo "<script>
+            alert('Data Berhasil Disimpan');
+            window.location.href = 'halaman_pengaduan.php';
+        </script>";
     } else {
-        echo "Data Gagal Disimpan" .mysqli_error($koneksi);
+        echo "Data Gagal Disimpan: " . mysqli_error($koneksi);
     }
 }
 ?>

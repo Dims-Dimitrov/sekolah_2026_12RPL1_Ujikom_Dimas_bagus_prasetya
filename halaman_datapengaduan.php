@@ -13,22 +13,24 @@
 
     $query = mysqli_query($koneksi, "SELECT * FROM `input_aspirasi`");
     ?>
-    <table>
+    <table border="1">
         <tr>
             <td>NIS</td>
             <td>Lokasi</td>
             <td>Isi pengaduan</td>
             <td>Status</td>
             <td>Feedback</td>
+            <td>Detail</td>
         </tr>
 
         <?php
         while ($data = mysqli_fetch_assoc($query)) { ?>
             <tr>
-                <td><?php echo $data['NIS']; ?></td>
+                <td><?php echo $data['nis']; ?></td>
                 <td><?php echo $data['lokasi']; ?></td>
                 <td><?php echo $data['keterangan']; ?></td>
-                <td><?php echo $data['status']; ?>
+                <td><?php echo $data['status']; ?></td>
+                <td><a href="halaman_detaildata.php?id=<?php echo $data['id_aspirasi']; ?>">Detail</a></td>
             </tr>
         <?php } ?>
 

@@ -7,10 +7,11 @@
     <title>Document</title>
 
     <?php 
-
+    include("prosesaspirasi.php");
     include("sambungdatabase.php");
 
-    $query = mysqli_query($koneksi,"");
+    $query = mysqli_query($koneksi,"select * from kategori");
+    // $data = mysqli_fetch_assoc($query);
 
     
     ?>
@@ -27,31 +28,23 @@
             <input type="text" id="lokasi" name="lokasi" placeholder="Masukkan Lokasi" required><br><br>
 
             <label for="kategori">Kategori</label>
-            <select id="kategori" name="kategori" required>
+            <select id="kategori" name="id_kategori" required>
                 <option value="">Pilih Kategori</option>
-                <option value="Fasilitas Sekolah">Fasilitas Sekolah</option>
-                <option value="Kebersihan">Kebersihan</option>
-                <option value="Keamanan">Keamanan</option>
-                <option value="Lainnya">Lainnya</option>
-
+                 <?php
+        while ($data = mysqli_fetch_assoc($query)) { ?>
+                <option value="<?php echo $data['id_kategori']; ?>"><?php echo $data['nama_kategori']; ?></option>
+                <?php } ?>
+            </select><br><br>
 
             <label for="keterangan">Isi Pengaduan</label>
             <textarea id="keterangan" name="keterangan" placeholder="Masukkan Isi Pengaduan Anda"
                 required></textarea><br><br>
 
             <a href="">
-                <button type="submit" class="simpanbutton">Simpan</button>
+                <button type="submit" class="simpanbutton" name="kirim">Simpan</button>
             </a>
         </form>
     </div>
-
-    <?php
-    include("sambungdatabase.php");
-
-
-
-
-    ?>
 </body>
 
 </html>
