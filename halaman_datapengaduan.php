@@ -30,7 +30,7 @@
                 <td><?php echo $data['lokasi']; ?></td>
                 <td><?php echo $data['keterangan']; ?></td>
                 <td><?php echo $data['status']; ?></td>
-                <td><a href="halaman_detaildata.php?id=<?php echo $data['id_aspirasi']; ?>">Detail</a></td>
+                <td><a href="halaman_detaildata.php?id=<?php echo $data['id']; ?>">Detail</a></td>
             </tr>
         <?php } ?>
 
