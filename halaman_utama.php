@@ -56,7 +56,6 @@
             <ul>
                 <li><a href="halaman_pengaduan.php">halaman pengaduan</a></li>
                 <li><a href="halaman_datapengaduan.php">Data Pengaduan</a></li>
-                <li><a href="#">Pengaturan</a></li>
             </ul>
         </aside>
 

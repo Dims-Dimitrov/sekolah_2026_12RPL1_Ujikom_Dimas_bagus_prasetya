@@ -42,8 +42,5 @@
     <a href="login.php">
         <button class="loginbutton">Login</button>
     </a>
-    <a href="halaman_pengaduan.php">
-        <button class="loginbutton">cepu</button>
-    </a>
 </body>
 </html>

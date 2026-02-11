@@ -41,7 +41,7 @@
         $_SESSION['nis'] = $data["nis"];
 
         if($data['role'] == "admin") {
-            header("location:Admin/halaman_dasbor.php");
+            header("location:Admin/index.php");
         } else if ($data["role"] == "siswa") {
             header("location:halaman_utama.php");
         } else {
