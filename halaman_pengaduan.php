@@ -9,6 +9,7 @@
     <?php 
     include("prosesaspirasi.php");
     include("sambungdatabase.php");
+    session_start();
 
     $query = mysqli_query($koneksi,"select * from kategori");
     // $data = mysqli_fetch_assoc($query);
@@ -22,10 +23,10 @@
         <h1>Halaman Pengaduan</h1>
         <form action="" method="POST">
             <label>NIS</label>
-            <input type="text" id="NIS" name="NIS" placeholder="Masukkan NIS Anda" required><br><br>
+            <input type="text" id="NIS" name="NIS" required value="<?php echo $_SESSION['nis']; ?>"><br><br>
 
             <label for="lokasi">lokasi</label>
-            <input type="text" id="lokasi" name="lokasi" placeholder="Masukkan Lokasi" required><br><br>
+            <input type="text" id="lokasi" name="lokasi" placeholder="Masukkan Lokasi" required ><br><br>
 
             <label for="kategori">Kategori</label>
             <select id="kategori" name="id_kategori" required>

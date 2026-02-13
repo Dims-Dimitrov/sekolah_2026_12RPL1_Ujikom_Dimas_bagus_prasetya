@@ -18,6 +18,7 @@
 <body>
     <div>
         <h1>Detail Data Pengaduan</h1>
+        <p>Tanggal : <?= $data['tgl_pengaduan']; ?></p>
         <p>NIS : <?= $data['nis']; ?></p>
         <p>nama : <?= $data['nama']; ?></p>
         <p>Kategori : <?= $data['nama_kategori']; ?></p>
