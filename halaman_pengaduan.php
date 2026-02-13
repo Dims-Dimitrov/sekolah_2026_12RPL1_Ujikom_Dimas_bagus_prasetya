@@ -1,4 +1,6 @@
-<?php session_start(); ?>
+<?php session_start(); 
+   include("auth.php");?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,7 +10,6 @@
     <title>Document</title>
 
     <?php 
-    include("auth.php");
     include("prosesaspirasi.php");
     include("sambungdatabase.php");
     $query = mysqli_query($koneksi,"select * from kategori");

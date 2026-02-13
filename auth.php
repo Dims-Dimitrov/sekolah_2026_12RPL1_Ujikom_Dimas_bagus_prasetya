@@ -1,9 +1,9 @@
 <?php 
-// if(session_status() === PHP_SESSION_NONE) {
-//     session_start();}
+if(session_status() === PHP_SESSION_NONE) {
+    session_start();}
 
-// if(!isset($_SESSION['id'])) {
-//     header("location:index.php?pesan=belum login");
-//     exit();
-// }
+if(!isset($_SESSION['id_user'])) {
+    header("location:index.php?pesan=belum login");
+    exit();
+}
 ?>

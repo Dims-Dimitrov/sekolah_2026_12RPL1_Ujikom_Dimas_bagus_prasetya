@@ -1,3 +1,5 @@
+<?php session_start(); 
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -20,7 +22,6 @@
     </form>
 
     <?php
-    session_start();
     include("sambungdatabase.php");
     if (isset($_POST["login"])) {
         $username = $_POST["username"];
@@ -35,7 +36,7 @@
             $data = mysqli_fetch_assoc($query);
 
         //simpan data sementara
-        $_SESSION['id'] = $data["id"];
+        $_SESSION['id_user'] = $data["id_user"];
         $_SESSION['nis'] = $data["nis"];
         $_SESSION['password'] = $data["password"];
         $_SESSION['role'] = $data["role"];

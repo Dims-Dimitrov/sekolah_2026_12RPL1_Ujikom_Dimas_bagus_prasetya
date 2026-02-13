@@ -1,3 +1,5 @@
+<?php session_start(); 
+    include("../auth.php");?>
 <!DOCTYPE html>
 <html lang="en">
 

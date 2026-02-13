@@ -1,3 +1,5 @@
+<?php session_start(); 
+   include("auth.php");?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,7 +11,6 @@
 
 <body>
     <?php
-    session_start();
     include("auth.php");
     include 'sambungdatabase.php';
 
