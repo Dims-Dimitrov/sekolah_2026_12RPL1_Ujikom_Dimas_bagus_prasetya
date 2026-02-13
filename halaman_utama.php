@@ -1,3 +1,7 @@
+<?php 
+session_start();
+include("auth.php");
+?>
 <!DOCTYPE html>
 <html lang="id">
 
@@ -49,7 +53,6 @@
 </head>
 
 <body>
-
     <div class="container">
         <aside class="sidebar">
             <h2>Menu</h2>
@@ -61,6 +64,7 @@
 
         <main class="content">
             <h1>Konten Utama</h1>
+            <a href="logout.php">Logout</a>
             <p>Ini adalah area konten.</p>
         </main>
     </div>

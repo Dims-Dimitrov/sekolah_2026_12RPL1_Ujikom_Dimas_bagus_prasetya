@@ -5,12 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <?php include '../sambungdatabase.php'; 
+    include("../auth.php");
     
     $query = mysqli_query($koneksi, "SELECT * FROM input_aspirasi JOIN kategori ON input_aspirasi.id_kategori = kategori.id_kategori");
     
     ?>
 </head>
 <body>
+    <h1>Halaman Admin</h1>
     <table border="1">
         <tr>
             <td>NIS</td>

@@ -10,6 +10,7 @@
 <body>
     <?php
     session_start();
+    include("auth.php");
     include 'sambungdatabase.php';
 
     if (!isset($_SESSION['nis'])) {

@@ -6,11 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
     <h1 class="judul">Login</h1>
     <form action="login.php" method="POST">
-        <label for="nis">NIS:</label>
-        <input type="text" id="nis" name="nis" required><br><br>
+        <label for="nis">Username:</label>
+        <input type="text" id="username" name="username" required><br><br>
 
         <label for="password">Password:</label>
         <input type="password" id="password" name="password" required><br><br>
@@ -22,11 +23,11 @@
     session_start();
     include("sambungdatabase.php");
     if (isset($_POST["login"])) {
-        $nis = $_POST["nis"];
+        $username = $_POST["username"];
         $password = $_POST["password"];
 
 
-        $query = mysqli_query($koneksi, "SELECT * FROM tbuser WHERE nis='$nis' AND password='$password'");
+        $query = mysqli_query($koneksi, "SELECT * FROM tbuser WHERE username='$username' AND password='$password'");
 
         $cek = mysqli_num_rows($query);
 
@@ -38,18 +39,20 @@
         $_SESSION['nis'] = $data["nis"];
         $_SESSION['password'] = $data["password"];
         $_SESSION['role'] = $data["role"];
-        $_SESSION['nis'] = $data["nis"];
 
-        if($data['role'] == "admin") {
+        if ($data['role'] == "admin") {
             header("location:Admin/index.php");
         } else if ($data["role"] == "siswa") {
             header("location:halaman_utama.php");
         } else {
-            header("location: login.php?pesan=NIS Salah");
+            echo "<script>
+            alert('password atau username salah');
+            window.location.href = 'login.php';
+        </script>";
         }
 
     }
-    
+
     ?>
 </body>
 
