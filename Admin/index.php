@@ -13,6 +13,7 @@
     ?>
 </head>
 <body>
+    <a href="tambah_siswa.php">Tambah siswa</a>
     <h1>Halaman Admin</h1>
     <a href="laporan.php">Filter laporan</a>
     <table border="1">
