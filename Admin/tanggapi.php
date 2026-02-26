@@ -18,7 +18,7 @@
         $update = mysqli_query($koneksi, "UPDATE input_aspirasi SET status='$status', feedback='$feedback' WHERE id='$id' ");
 
         if ($update) {
-            echo "<script>alert('berhasil update'); window.location='index.php'</script>";
+            echo "<script>alert('berhasil update'); window.location='laporan.php'</script>";
         } else {
             echo "gagal update";
         }

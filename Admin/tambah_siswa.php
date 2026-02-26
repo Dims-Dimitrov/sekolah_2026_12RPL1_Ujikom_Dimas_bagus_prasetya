@@ -1,5 +1,5 @@
-<?php session_start();
-include("../auth.php"); ?>
+<?php session_start(); 
+    include("../auth.php");?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -44,7 +44,7 @@ include("../auth.php"); ?>
         <h1>Tambahkan siswa</h1>
         <form action="" method="POST">
             <label>NIS</label>
-            <input type="text" id="NIS" name="NIS"><br><br>
+            <input type="text" id="NIS" name="NIS" required><br><br>
 
              <label for="username">Username</label>
             <input type="text" id="username" name="username" placeholder="Masukkan username siswa" required><br><br>

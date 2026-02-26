@@ -21,40 +21,50 @@
         <button type="submit" class="loginbutton" name="login">Login</button>
     </form>
 
-    <?php
-    include("sambungdatabase.php");
-    if (isset($_POST["login"])) {
-        $username = $_POST["username"];
-        $password = $_POST["password"];
+   <?php
+include("sambungdatabase.php");
 
+if (isset($_POST["login"])) {
 
-        $query = mysqli_query($koneksi, "SELECT * FROM tbuser WHERE username='$username' AND password='$password'");
+    $username = $_POST["username"];
+    $password = $_POST["password"];
 
-        $cek = mysqli_num_rows($query);
+    $query = mysqli_query($koneksi, "SELECT * FROM tbuser WHERE username='$username'");
+    $cek = mysqli_num_rows($query);
 
-        if ($cek > 0)
-            $data = mysqli_fetch_assoc($query);
+    if ($cek > 0) {
 
-        //simpan data sementara
-        $_SESSION['id_user'] = $data["id_user"];
-        $_SESSION['nis'] = $data["nis"];
-        $_SESSION['password'] = $data["password"];
-        $_SESSION['role'] = $data["role"];
+        $data = mysqli_fetch_assoc($query);
 
-        if ($data['role'] == "admin") {
-            header("location:Admin/laporan.php");
-        } else if ($data["role"] == "siswa") {
-            header("location:halaman_pengaduan.php");
+        if (password_verify($password, $data['password'])) {
+
+            $_SESSION['id_user'] = $data["id_user"];
+            $_SESSION['nis']     = $data["nis"];
+            $_SESSION['role']    = $data["role"];
+
+            if ($data['role'] == "admin") {
+                header("location:Admin/laporan.php");
+                exit();
+            } else if ($data["role"] == "siswa") {
+                header("location:halaman_pengaduan.php");
+                exit();
+            }
+
         } else {
             echo "<script>
-            alert('password atau username salah');
-            window.location.href = 'login.php';
-        </script>";
+                alert('Password salah');
+                window.location.href='login.php';
+            </script>";
         }
 
+    } else {
+        echo "<script>
+            alert('Username tidak ditemukan');
+            window.location.href='login.php';
+        </script>";
     }
-
-    ?>
+}
+?>
 </body>
 
 </html>
