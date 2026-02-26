@@ -8,7 +8,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <?php include '../sambungdatabase.php';
-    include("../auth.php");
 
     $id = ($_GET['id']);
 
@@ -32,6 +31,7 @@
 </head>
 
 <body>
+     <?php include("../sidebar_admin.php")?>
 
     <div>
         <?php $data = mysqli_fetch_assoc($query); ?>

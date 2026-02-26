@@ -10,6 +10,7 @@
 </head>
 
 <body>
+    <?php include("sidebar_siswa.php")?>
     <?php
     include("auth.php");
     include 'sambungdatabase.php';

@@ -42,9 +42,9 @@
         $_SESSION['role'] = $data["role"];
 
         if ($data['role'] == "admin") {
-            header("location:Admin/index.php");
+            header("location:Admin/laporan.php");
         } else if ($data["role"] == "siswa") {
-            header("location:halaman_utama.php");
+            header("location:halaman_pengaduan.php");
         } else {
             echo "<script>
             alert('password atau username salah');

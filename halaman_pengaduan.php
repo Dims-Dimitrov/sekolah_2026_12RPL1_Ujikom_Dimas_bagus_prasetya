@@ -20,6 +20,7 @@
 </head>
 
 <body>
+    <?php include("sidebar_siswa.php")?>
     <div>
         <h1>Halaman Pengaduan</h1>
         <form action="" method="POST">

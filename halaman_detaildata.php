@@ -19,6 +19,7 @@
 </head>
 
 <body>
+      <?php include("sidebar_siswa.php")?>
     <div>
         <h1>Detail Data Pengaduan</h1>
         <p>Tanggal : <?= $data['tgl_pengaduan']; ?></p>

@@ -29,7 +29,7 @@ include("../auth.php"); ?>
         if ($simpan) {
             echo "<script>
             alert('Data Berhasil Disimpan');
-            window.location.href = 'index.php';
+            window.location.href = 'daftar_user_siswa.php';
         </script>";
         } else {
             echo "Data Gagal Disimpan: " . mysqli_error($koneksi);
@@ -39,6 +39,7 @@ include("../auth.php"); ?>
 </head>
 
 <body>
+     <?php include("../sidebar_admin.php")?>
     <div>
         <h1>Tambahkan siswa</h1>
         <form action="" method="POST">

@@ -14,6 +14,7 @@
 </head>
 
 <body>
+    <?php include("../sidebar_admin.php")?>
     <h2>laporan aspirasi</h2>
     <form action="" method="GET">
         <label for="">filter kategori</label>

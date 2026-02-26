@@ -1,7 +1,3 @@
-<?php 
-session_start();
-include("auth.php");
-?>
 <!DOCTYPE html>
 <html lang="id">
 
@@ -61,14 +57,6 @@ include("auth.php");
                 <li><a href="halaman_datapengaduan.php">Data Pengaduan</a></li>
             </ul>
         </aside>
-
-        <main class="content">
-            <h1>Konten Utama</h1>
-            <a href="logout.php">Logout</a>
-            <p>Ini adalah area konten.</p>
-        </main>
-    </div>
-
 </body>
 
 </html>
