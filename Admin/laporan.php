@@ -1,6 +1,6 @@
-<?php session_start(); 
-    include("../auth.php");?>
-    
+<?php session_start();
+include("../auth.php"); ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,33 +8,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="../gaya.css">
     <?php include("../sambungdatabase.php");
     $query_kat = mysqli_query($koneksi, "select * from kategori");
     ?>
 </head>
 
 <body>
-    <?php include("../sidebar_admin.php")?>
-    <h2>laporan aspirasi</h2>
-    <form action="" method="GET">
-        <label for="">filter kategori</label>
-        <select name="kategori" id="">
-            <option value="">SEMUA KATEGORI</option>
-            <?php
-            while ($data = mysqli_fetch_assoc($query_kat)) { ?>
-                <option value="<?php echo $data['id_kategori']; ?>" <?php if (isset($_GET['kategori']) && $_GET['kategori'] == $data['id_kategori'])
-                       echo "selected"; ?>>
-                    <?php echo $data['nama_kategori']; ?>
-                </option> <?php } ?>
-        </select>
-        <label for="">Cari NIS:</label>
-        <input type="text" name="nis" placeholder="Masukkan nis"
-            value="<?php echo isset($_GET['nis']) ? $_GET['nis'] : ''; ?>">
+    <?php include("../sidebar_admin.php") ?>
+    <div class="wadah-baris">
+        <div class="wadah-konten">
+            <h2 class="judul-halaman">Laporan Aspirasi</h2>
+            <div class="filter-bar">
+                <form action="" method="GET">
+                    <label for="">Filter Kategori</label>
+                    <select name="kategori" id="">
+                        <option value="">SEMUA KATEGORI</option>
+                        <?php
+                        while ($data = mysqli_fetch_assoc($query_kat)) { ?>
+                            <option value="<?php echo $data['id_kategori']; ?>" <?php if (isset($_GET['kategori']) && $_GET['kategori'] == $data['id_kategori'])
+                                   echo "selected"; ?>>
+                                <?php echo $data['nama_kategori']; ?>
+                            </option>
+                        <?php } ?>
+                    </select>
 
-        <label for="">Cari Tanggal:</label>
-        <input type="date" name="tanggal" value="<?php echo isset($_GET['tanggal']) ? $_GET['tanggal'] : ''; ?>">
-        <button type="submit">filter data</button>
-    </form>
+                    <label for="">Cari NIS:</label>
+                    <input type="text" name="nis" placeholder="Masukkan nis"
+                        value="<?php echo isset($_GET['nis']) ? $_GET['nis'] : ''; ?>">
+
+                    <label for="">Cari Tanggal:</label>
+                    <input type="date" name="tanggal" value="<?php echo isset($_GET['tanggal']) ? $_GET['tanggal'] : ''; ?>">
+                    <button type="submit">Filter Data</button>
+                </form>
+            </div>
 
     <?php
 
@@ -57,7 +64,7 @@
     $query = mysqli_query($koneksi, $query_text);
     ?>
 
-    <table border="1">
+    <table class="tabel-data">
         <tr>
             <td>NIS</td>
             <td>Kategori</td>
@@ -71,8 +78,11 @@
                 <td><?php echo $data['nama_kategori']; ?></td>
                 <td><?php echo $data['keterangan']; ?></td>
                 <td><?php echo $data['status']; ?></td>
-                <td><a href="tanggapi.php?id=<?php echo $data['id']; ?>">Tanggapi</a></td>
+                <td><a href="tanggapi.php?id=<?php echo $data['id']; ?>"><div class="tombol">Tanggapi</div></a></td>
             <?php } ?>
+            </table>
+        </div> <!-- end wadah-konten -->
+    </div> <!-- end wadah-baris -->
 
 </body>
 

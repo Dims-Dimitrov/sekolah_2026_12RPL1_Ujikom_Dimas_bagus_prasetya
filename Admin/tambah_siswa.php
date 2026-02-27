@@ -2,12 +2,13 @@
     include("../auth.php");?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Tambah Siswa - Laprassek</title>
+    <link rel="stylesheet" href="../gaya.css">
     <?php
     include("../sambungdatabase.php");
 
@@ -39,31 +40,42 @@
 </head>
 
 <body>
-     <?php include("../sidebar_admin.php")?>
-    <div>
-        <h1>Tambahkan siswa</h1>
-        <form action="" method="POST">
-            <label>NIS</label>
-            <input type="text" id="NIS" name="NIS" required><br><br>
+    <div class="wadah-baris">
+        <?php include("../sidebar_admin.php")?>
+        <div class="wadah-konten">
+            <h1 class="judul-halaman">Tambah Siswa Baru</h1>
+            
+            <form action="" method="POST" class="formulir">
+                <div class="grup-formulir">
+                    <label for="nis">NIS</label>
+                    <input type="text" id="nis" name="NIS" required>
+                </div>
 
-             <label for="username">Username</label>
-            <input type="text" id="username" name="username" placeholder="Masukkan username siswa" required><br><br>
+                <div class="grup-formulir">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" name="username" placeholder="Masukkan username siswa" required>
+                </div>
 
-            <label for="namasiswa">Nama siswa</label>
-            <input type="text" id="namasiswa" name="namasiswa" placeholder="Masukkan Nama Siswa" required><br><br>
+                <div class="grup-formulir">
+                    <label for="namasiswa">Nama Siswa</label>
+                    <input type="text" id="namasiswa" name="namasiswa" placeholder="Masukkan nama siswa" required>
+                </div>
 
-            <label for="Kelas">Kelas</label>
-            <select id="kelas" name="Kelas" required>
-                <option value="XII RPL 1">XII RPL 1</option>
-                <option value="XII RPL 2">XII RPL 2</option>
-            </select><br><br>
+                <div class="grup-formulir">
+                    <label for="kelas">Kelas</label>
+                    <input type="text" id="kelas" name="Kelas" placeholder="Masukkan Kelas" required>
+                    </select>
+                </div>
 
-            <label for="password">Password</label>
-            <input type="text" id="password" name="password" placeholder="Masukkan password" required><br><br>
+                <div class="grup-formulir">
+                    <label for="password">Password</label>
+                    <input type="text" id="password" name="password" placeholder="Masukkan password" required>
+                </div>
 
-            <button type="submit" class="simpanbutton" name="kirim">Simpan</button>
-            </a>
-        </form>
+                <button type="submit" class="tombol" name="kirim">Simpan Siswa</button>
+                <a href="daftar_user_siswa.php" class="tombol-sekunder tombol" style="margin-left:10px;">Kembali</a>
+            </form>
+        </div>
     </div>
 </body>
 

@@ -1,25 +1,32 @@
 <?php session_start(); 
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Login - Laprassek</title>
+    <link rel="stylesheet" href="gaya.css">
 </head>
 
-<body>
-    <h1 class="judul">Login</h1>
-    <form action="login.php" method="POST">
-        <label for="nis">Username:</label>
-        <input type="text" id="username" name="username" required><br><br>
+<body class="halaman-login">
+    <div class="kotak-login">
+        <h1>Login</h1>
+        <form action="login.php" method="POST" class="formulir">
+            <div class="grup-formulir">
+                <label for="nama-pengguna">Username:</label>
+                <input type="text" id="nama-pengguna" name="username" required>
+            </div>
 
-        <label for="password">Password:</label>
-        <input type="password" id="password" name="password" required><br><br>
+            <div class="grup-formulir">
+                <label for="kata-sandi">Password:</label>
+                <input type="password" id="kata-sandi" name="password" required>
+            </div>
 
-        <button type="submit" class="loginbutton" name="login">Login</button>
-    </form>
+            <button type="submit" class="tombol" name="login" style="width: 100%;">Login</button>
+        </form>
+    </div>
 
    <?php
 include("sambungdatabase.php");

@@ -1,12 +1,13 @@
 <?php session_start(); 
    include("auth.php");?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Detail Pengaduan - Laprassek</title>
+    <link rel="stylesheet" href="gaya.css">
     <?php
 
     include("sambungdatabase.php");
@@ -19,18 +20,26 @@
 </head>
 
 <body>
-      <?php include("sidebar_siswa.php")?>
-    <div>
-        <h1>Detail Data Pengaduan</h1>
-        <p>Tanggal : <?= $data['tgl_pengaduan']; ?></p>
-        <p>NIS : <?= $data['nis']; ?></p>
-        <p>nama : <?= $data['nama']; ?></p>
-        <p>Kategori : <?= $data['nama_kategori']; ?></p>
-        <p>Lokasi : <?= $data['lokasi']; ?></p>
-        <p>keterangan : <?= $data['keterangan']; ?></p>
-        <p>Status : <?= $data['status']; ?></p>
-        <label for="">Feedback</label>
-        <textarea name="feedback" id=""><?php echo $data['feedback']; ?></textarea>
+    <div class="wadah-baris">
+        <?php include("sidebar_siswa.php")?>
+        <div class="wadah-konten">
+            <h1 class="judul-halaman">Detail Data Pengaduan</h1>
+
+            <div class="kartu">
+                <p><strong>Tanggal :</strong> <?= $data['tgl_pengaduan']; ?></p>
+                <p><strong>NIS :</strong> <?= $data['nis']; ?></p>
+                <p><strong>Nama :</strong> <?= $data['nama']; ?></p>
+                <p><strong>Kategori :</strong> <?= $data['nama_kategori']; ?></p>
+                <p><strong>Lokasi :</strong> <?= $data['lokasi']; ?></p>
+                <p><strong>Keterangan :</strong> <?= $data['keterangan']; ?></p>
+                <p><strong>Status :</strong> <?= $data['status']; ?></p>
+                <div class="grup-formulir">
+                    <label for="feedback"><strong>Feedback</strong></label>
+                    <textarea name="feedback" id="feedback" class="texarea-detail" readonly><?php echo $data['feedback']; ?></textarea>
+                </div>
+                <a href="halaman_datapengaduan.php" class="tombol-sekunder tombol">Kembali</a>
+            </div>
+        </div>
     </div>
 </body>
 
